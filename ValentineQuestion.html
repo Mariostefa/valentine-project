@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="valentineQuestion.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΒΑΛΕΝΤΙΝΟΣ</title>
+</head>
+<body>
+    <div id="qna" style="text-align: center;">
+
+    <img style="height: 230px; box-shadow: 3px 3px 15px 3px lightblue; border-radius: 20px; margin-top: 50px;" src="https://gifdb.com/images/high/cute-Love-bear-roses-ou7zho5oosxnpo6k.gif"/>
+
+    <p style="color: red; text-shadow: 2px 2px 3px lightcoral; font-size: 30px;"> Κυρία Ιωάννα Αμαξοποιού Θα θέλατε να γίνεται η Βαλεντίνα μου ?</p>
+    <button id="yestbtn" onclick="yes()">NAI</button>
+    <button id="nobtn"  onclick="random()">OXI</button>
+    </div>
+
+    <div id="yesans" style="display: none;">
+
+        <img style="height: 240px; box-shadow: 3px 3px 15px 3px lightblue; border-radius: 20px; margin-top: 50px;" src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif"/> 
+
+        <h1>ΧΑΙΡΟΜΑΙ ΠΟΛΥ ΠΟΥ ΔΕΧΤΗΚΕΣ ΝΑ ΓΙΝΕΙΣ Η ΒΑΛΕΝΤΙΝΑ ΜΟΥ </h1>
+        <p style="font-size: 20px;">Για αυτό εγώ σου έχω μια έκπληξη που σε περιμένει</p>
+        <p style="font-size: 20px;">το μόνο που πρέπει να κάνεις είναι : </p>
+        <p style="font-size: 20px;">Να πας στο γραφέιο του ΑΞΥΠ που σε περιμένουν 2 εκπληξούλες </p>
+        <p style="font-size: 20px;">Οταν τα παραλάβεις τις εκπληξούλες στείλε μου μνμ να σου πω ποιο να ανοίξεις πρώτο</p>
+        
+        <p style="font-size: 12px;">Υ.Γ Αν ρωτήσει τι περιέχουν τα 2 πακέτα , πες ρούχα ή κόσμηματα 
+            (DISCLAIMER : ΔΕΝ ΕΙΝΑΙ ΣΙΓΟΥΡΟ ΟΤΙ ΟΝΤΩΣ ΠΕΡΙΕΧΟΥΝ ΚΑΤΙ ΑΠΟ ΑΥΤΑ ΤΑ 2) </p>
+        <p style="font-size: 12px;"> Αμα θέλεις μπορείς να κλείσεις τώρα την ιστοσελίδα</p>
+
+    </div>
+
+    <script>
+        var random = function(){
+            let num = Math.floor(Math.random() * 6) +  1;
+            console.log(num);
+            if ( num == 1){
+                document.getElementById("nobtn").innerText="Είσαι Σίγουρη ?";
+            }else if (num == 2){
+                document.getElementById("nobtn").innerText="Ξανασκέψου το";
+            }else if (num == 3){
+                document.getElementById("nobtn").innerText="Θα καλέσω την αστυνομία αγάπης";
+            }else if(num == 4){
+                document.getElementById("nobtn").innerText="Δώσε μου ακόμα μια ευκαιρία";
+            }else if(num == 5){
+                document.getElementById("nobtn").innerText="Πρόβλημα καταχώρησης";
+            }else{
+                document.getElementById("nobtn").innerText="ERROR 05032022 LOVE NOT FOUND";
+            }
+        };
+
+
+        var yes = function(){
+            document.getElementById("qna").style.display = "none";
+            document.getElementById("yesans").style.display = "block" ;
+        }
+    </script>
+</body>
+</html>

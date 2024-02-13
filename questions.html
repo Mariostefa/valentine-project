@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://raw.githubusercontent.com/sojijr/valentine-website/main/public/images/favicon.png">
+    <link rel="icon" href="icons/favicon.png" type="image/x-icon" />  
+    <link rel="stylesheet" href="questions.css">
+    <title>Χαρούμενος Άγιος Βαλεντίνος</title>
+    
+</head>
+<body>   
+    <div id ="Forms" style="display: block;">
+   
+    <form id="d1" style="display: block;" >
+        <p>Πότε έχουμε επέτειο ? </p><br>
+        <input type="radio" name="choice" value="february" > 20 Φεβρουαρίου <br>
+        <input type="radio" name="choice" value="march"> 5 Μαρτίου<br>
+        <input type="radio" name="choice" value="octomber"> 13 Οκτωβρίου<br> 
+        <input type="radio" name="choice" value="junu"> 6 Ιουνίου<br>
+        <button id="first" onclick="submitAnswer(d1.choice.value, 'march', 'd1')">ΑΠΑΝΤΗΣΗ</button>
+    </form>
+
+    <form id="d2" style="display: none;">
+        <p>Τι φαγητό έχει φτιάξει ο Μάριος για την Ιωάννα ? </p><br>
+        <input type="radio" name="choice" value="cordon"> Cordon Bleu <br>
+        <input type="radio" name="choice" value="spagetti"> Μακαρονάδα <br>
+        <input type="radio" name="choice" value="snitchel"> σνίτσελ <br> 
+        <input type="radio" name="choice" value="meat"> Κρέας στην κατσαρόλα<br>
+        <button id="second" onclick="submitAnswer(d2.choice.value, 'cordon', 'd2')">ΑΠΑΝΤΗΣΗ</button>
+    </form>
+
+    <form id="d3" style="display: none;">
+        <p>Σε ποια πόλη ήταν η πρώτη γνωρημία της Ιωάννας και του Μάριου</p><br>
+        <input type="radio" name="choice" value="thess"> Θεσσαλονίκη <br>
+        <input type="radio" name="choice" value="alx"> Αλεξανδρούπολη <br>
+        <input type="radio" name="choice" value="ber"> Βέροια <br> 
+        <input type="radio" name="choice" value="kav"> Καβάλα <br>
+        <button id="third" onclick="submitAnswer(d3.choice.value, 'kav', 'd3')">ΑΠΑΝΤΗΣΗ</button>
+    </form>
+
+    <form id="d4" style="display: none;">
+        <p>Ποία είναι τα παρατσούκλια που φωνάζει ο Μάριος την Ιωάννα</p><br>
+        <input type="radio" name="choice" value="bon"> Bonnie <br>
+        <input type="radio" name="choice" value="sb"> SB <br>
+        <input type="radio" name="choice" value="cat"> Γατούδι <br> 
+        <input type="radio" name="choice" value="everything"> όλα τα παραπάνω <br>
+        <button id="fourth" onclick="submitAnswer(d4.choice.value, 'everything', 'd4')">ΑΠΑΝΤΗΣΗ</button>
+    </form>
+    </div>
+
+<script>
+var submitAnswer = function(valore, rightanswer, idForm) { 
+event.preventDefault();
+if (valore == "")   
+    alert("Παρακαλώ δώστε απάντηση κάποια απάντηση");
+else{
+    if (valore == rightanswer) {
+        alert("OK");
+        if (idForm == "d1"){
+            document.getElementById("d1").style.display = "none";
+            document.getElementById("d2").style.display = "block";
+        }else if(idForm == "d2"){
+            document.getElementById("d2").style.display = "none";
+            document.getElementById("d3").style.display = "block";
+        }else if(idForm == "d3"){
+            document.getElementById("d3").style.display = "none";
+            document.getElementById("d4").style.display = "block";
+        }else if(idForm == "d4"){
+            document.getElementById("d4").style.display = "none";
+            document.getElementById("Forms").style.display = "none";
+            window.location.replace("ValentineQuestion.html");
+        }
+    }else {
+        console.log("Redirecting to wrongAnswer.html...");
+        window.location.replace("wrongAnswer.html");
+    }
+}
+};
+</script>
+
+
+</body>
+</html>
